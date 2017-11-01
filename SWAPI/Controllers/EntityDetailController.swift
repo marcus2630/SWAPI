@@ -8,36 +8,58 @@
 
 import UIKit
 
-class EntityDetailController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+class EntityDetailController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+
+    
+    @IBOutlet weak var characterPicker: UIPickerView!
+    
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let attributeCell = tableView.dequeueReusableCell(withIdentifier: "AttributeCell", for: indexPath) as? AttributeCell else { fatalError() }
+        
+        let keys = Array(Stub.character[indexPath.section].keys)
+        let dataSourceNameMargin = 1
+        
+        
+        attributeCell.attributeValue.text = Stub.character[indexPath.section][keys[indexPath.row+dataSourceNameMargin]]?.firstUppercased
+        attributeCell.attributeName.text = keys[indexPath.row+dataSourceNameMargin].firstUppercased
+        
+        return attributeCell
+        
+    }
+    
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return Stub.character[section]["name"]
+        
+    }
+    
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
     }
     
-    //MARK: Delegates
-    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let titleData = pickerData[row]
-        
-        let myColor = UIColor(red: (250/255.0), green: (222/255.0), blue: (74/255.0), alpha: (1/1.0))
-        
-        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 20.0)!,NSForegroundColorAttributeName:myColor])
-        return myTitle
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = UIColor.white
+        header.textLabel?.font = UIFont.systemFont(ofSize: 22.0)
+        header.backgroundView?.backgroundColor = UIColor(red: 28/255.0, green: 32/255.0, blue: 36/255.0, alpha: 1.0)
     }
+
     
     
-    let pickerData = ["Mozzarella","Gorgonzola","Provolone","Brie","Maytag Blue","Sharp Cheddar","Monterrey Jack","Stilton","Gouda","Goat Cheese", "Asiago"]
-    
-    
-    
-    @IBOutlet weak var characterPicker: UIPickerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
+        // Set pickerview data source and delegates to self
         characterPicker.dataSource = self
         characterPicker.delegate = self
     
@@ -50,16 +72,42 @@ class EntityDetailController: UIViewController, UIPickerViewDataSource, UIPicker
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+
+
+// MARK: - Pickerview
+
+extension EntityDetailController: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
     }
-    */
-
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return Stub.pickerData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let titleData = Stub.pickerData[row]
+        
+        let myColor = UIColor(red: (250/255.0), green: (222/255.0), blue: (74/255.0), alpha: (1/1.0))
+        let shadow = NSShadow()
+        
+        shadow.shadowOffset = CGSize(width: 2, height: 1)
+        shadow.shadowBlurRadius = 5
+        shadow.shadowColor = UIColor.black
+        
+        let myTitle = NSAttributedString(string: titleData,
+                                         attributes: [
+                                            NSFontAttributeName:UIFont(name: "Georgia", size: 20.0)!,
+                                            NSForegroundColorAttributeName:myColor,
+                                            NSShadowAttributeName: shadow
+                                            ]
+                                        )
+        return myTitle
+    }
+    
+    
+    
 }

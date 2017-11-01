@@ -27,6 +27,14 @@ class EntitySelectionController: UITableViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showCharacters" {
+            if let destination = segue.destination as? EntityDetailController {
+                destination.navigationItem.title = "Characters"
+            }
+        }
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
