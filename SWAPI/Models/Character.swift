@@ -9,6 +9,7 @@
 import Foundation
 
 
+
 class Character {
     let name: String
     let height: Int
@@ -46,8 +47,8 @@ extension Character {
         }
         
         guard   let name        = json[Key.name],
-                var height      = json[Key.height],
-                var mass        = json[Key.mass],
+                let height      = json[Key.height],
+                let mass        = json[Key.mass],
                 let hairColor   = json[Key.hairColor],
                 let skinColor   = json[Key.skinColor],
                 let eyeColor    = json[Key.eyeColor],
@@ -57,11 +58,10 @@ extension Character {
             return nil
         }
         
-        let heightAsInt = Int(height)
-        let massAsInt = Int(mass)
         
         
             
+        guard let heightAsInt = Int(height), let massAsInt = Int(mass) else { return nil }
         
         self.init(name: name, height: heightAsInt, mass: massAsInt, hairColor: hairColor, skinColor: skinColor, eyeColor: eyeColor, birthYear: birthYear, gender: gender)
     }

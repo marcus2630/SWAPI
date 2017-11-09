@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MVy-UH-wgt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MVy-UH-wgt">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,7 +31,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Characters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jao-iK-8Fr">
-                                                    <rect key="frame" x="142" y="162.5" width="91" height="21"/>
+                                                    <rect key="frame" x="142" y="160" width="91" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="d6Z-S9-oM7"/>
                                                     </constraints>
@@ -40,7 +40,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-characters" translatesAutoresizingMaskIntoConstraints="NO" id="6J0-cY-svV">
-                                                    <rect key="frame" x="107" y="8" width="160" height="144.5"/>
+                                                    <rect key="frame" x="107" y="11" width="160" height="139"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="160" id="f30-VJ-rqZ"/>
                                                     </constraints>
@@ -68,7 +68,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehicles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfx-WC-r7d">
-                                                    <rect key="frame" x="153" y="161.5" width="69" height="21"/>
+                                                    <rect key="frame" x="153" y="159" width="69" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="mDk-yz-GIv"/>
                                                     </constraints>
@@ -77,7 +77,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-vehicles" translatesAutoresizingMaskIntoConstraints="NO" id="piR-oC-uOQ">
-                                                    <rect key="frame" x="107" y="8" width="160" height="145.5"/>
+                                                    <rect key="frame" x="107" y="11" width="160" height="140"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="160" id="udk-UR-rqz"/>
                                                     </constraints>
@@ -105,7 +105,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starships" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxO-9T-mlg">
-                                                    <rect key="frame" x="148" y="162.5" width="79" height="21"/>
+                                                    <rect key="frame" x="148" y="160" width="79" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="iwk-cn-zLd"/>
                                                     </constraints>
@@ -114,7 +114,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-starships" translatesAutoresizingMaskIntoConstraints="NO" id="h8K-F9-OfY">
-                                                    <rect key="frame" x="107" y="8" width="160" height="146.5"/>
+                                                    <rect key="frame" x="107" y="11" width="160" height="141"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="160" id="eR7-k8-uQF"/>
                                                     </constraints>
@@ -162,6 +162,12 @@
                             <pickerView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="aDh-94-3R5" customClass="characterPickerController" customModule="SWAPI" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="375" height="216"/>
                                 <color key="backgroundColor" red="0.14310889211306937" green="0.17038713442765838" blue="0.1938725538513203" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </pickerView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="dFA-83-ZiL" userLabel="Size stack view">
                                 <rect key="frame" x="16" y="290" width="343" height="45"/>
@@ -236,12 +242,38 @@
                                                     <color key="textColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hBE-BT-LJw">
+                                                    <rect key="frame" x="254.5" y="11" width="90" height="22"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="English" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c28-GO-gtX">
+                                                            <rect key="frame" x="0.0" y="0.0" width="51.5" height="22"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Metric" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nd7-Sh-9js">
+                                                            <rect key="frame" x="51.5" y="0.0" width="38.5" height="22"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="90" id="zQl-An-17D"/>
+                                                    </constraints>
+                                                </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="hBE-BT-LJw" secondAttribute="trailing" constant="15.5" id="Nr9-6U-l8t"/>
+                                                <constraint firstItem="hBE-BT-LJw" firstAttribute="top" secondItem="xuE-eT-Uxz" secondAttribute="topMargin" id="Pao-6c-EbB"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="hBE-BT-LJw" secondAttribute="bottom" id="a48-Ov-sMW"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="attributeName" destination="EgE-Jj-zrA" id="vLt-Hl-hhC"/>
                                             <outlet property="attributeValue" destination="sjc-13-zze" id="nwU-Qc-MeA"/>
+                                            <outlet property="convertValueSwitch" destination="hBE-BT-LJw" id="e5t-OR-DgT"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

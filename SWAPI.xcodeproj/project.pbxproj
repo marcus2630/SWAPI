@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C4D0FDC1FADD29D0023ADB0 /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D0FDB1FADD29D0023ADB0 /* Attribute.swift */; };
 		2C7793DB1FA44C6B0010EBA0 /* Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7793DA1FA44C6B0010EBA0 /* Stub.swift */; };
 		2C7793E81FA7AF580010EBA0 /* AttributeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7793E71FA7AF580010EBA0 /* AttributeCell.swift */; };
 		2C7793EA1FAA4E9D0010EBA0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7793E91FAA4E9D0010EBA0 /* Extensions.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C4D0FDB1FADD29D0023ADB0 /* Attribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
 		2C7793DA1FA44C6B0010EBA0 /* Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stub.swift; sourceTree = "<group>"; };
 		2C7793E71FA7AF580010EBA0 /* AttributeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeCell.swift; sourceTree = "<group>"; };
 		2C7793E91FAA4E9D0010EBA0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				2CBDA0A01FAB9B8800E9865B /* Character.swift */,
+				2C4D0FDB1FADD29D0023ADB0 /* Attribute.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				2C7793E81FA7AF580010EBA0 /* AttributeCell.swift in Sources */,
 				2CA6759C1FA0DCBE0036C292 /* EntitySelectionCell.swift in Sources */,
 				2C7793EA1FAA4E9D0010EBA0 /* Extensions.swift in Sources */,
+				2C4D0FDC1FADD29D0023ADB0 /* Attribute.swift in Sources */,
 				2CBDA0A11FAB9B8800E9865B /* Character.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

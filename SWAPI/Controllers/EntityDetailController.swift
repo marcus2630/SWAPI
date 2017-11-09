@@ -12,19 +12,30 @@ class EntityDetailController: UIViewController, UITableViewDataSource, UITableVi
     
 
     
+    
+    
     @IBOutlet weak var characterPicker: UIPickerView!
     
+    let character = Character(withJson: Stub.characterDict)
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let attributeCell = tableView.dequeueReusableCell(withIdentifier: "AttributeCell", for: indexPath) as? AttributeCell else { fatalError() }
         
-        let keys = Array(Stub.character[indexPath.section].keys)
+        
+        let keys = Array(Stub.characterDict.keys)
         let dataSourceNameMargin = 1
+        let currentKey = keys[indexPath.row+dataSourceNameMargin]
         
         
-        attributeCell.attributeValue.text = Stub.character[indexPath.section][keys[indexPath.row+dataSourceNameMargin]]?.firstUppercased
-        attributeCell.attributeName.text = keys[indexPath.row+dataSourceNameMargin].firstUppercased
+        if currentKey == Attribute.height.jsonKey {
+            attributeCell.showConvertSwitch(false)
+        }
+        
+        
+        
+        attributeCell.attributeValue.text = Stub.characterDict[currentKey]?.firstUppercased
+        attributeCell.attributeName.text = Attribute(name: currentKey)?.displayName
         
         return attributeCell
         
@@ -32,7 +43,7 @@ class EntityDetailController: UIViewController, UITableViewDataSource, UITableVi
     
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return Stub.character[section]["name"]
+        return Stub.character?.name
         
     }
     
@@ -48,7 +59,9 @@ class EntityDetailController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.textColor = UIColor.white
-        header.textLabel?.font = UIFont.systemFont(ofSize: 22.0)
+        header.textLabel?.textAlignment = .center
+        header.textLabel?.font = UIFont.systemFont(ofSize: 27.0)
+        NSLayoutConstraint(item: header, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leadingMargin, multiplier: 1.0, constant: 0.0).isActive = true
         header.backgroundView?.backgroundColor = UIColor(red: 28/255.0, green: 32/255.0, blue: 36/255.0, alpha: 1.0)
     }
 
@@ -94,13 +107,10 @@ extension EntityDetailController: UIPickerViewDataSource, UIPickerViewDelegate {
         let myColor = UIColor(red: (250/255.0), green: (222/255.0), blue: (74/255.0), alpha: (1/1.0))
         let shadow = NSShadow()
         
-        shadow.shadowOffset = CGSize(width: 2, height: 1)
-        shadow.shadowBlurRadius = 5
-        shadow.shadowColor = UIColor.black
         
         let myTitle = NSAttributedString(string: titleData,
                                          attributes: [
-                                            NSFontAttributeName:UIFont(name: "Georgia", size: 20.0)!,
+                                            NSFontAttributeName:UIFont(name: "Georgia", size: 25.0)!,
                                             NSForegroundColorAttributeName:myColor,
                                             NSShadowAttributeName: shadow
                                             ]
