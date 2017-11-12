@@ -16,35 +16,27 @@ class EntityDetailController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet weak var characterPicker: UIPickerView!
     
-    let character = Character(withJson: Stub.characterDict)
+    var entities: [Entity]? = nil
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let attributeCell = tableView.dequeueReusableCell(withIdentifier: "AttributeCell", for: indexPath) as? AttributeCell else { fatalError() }
         
-        
-        let keys = Array(Stub.characterDict.keys)
-        let dataSourceNameMargin = 1
-        let currentKey = keys[indexPath.row+dataSourceNameMargin]
-        
-        
-        if currentKey == Attribute.height.jsonKey {
-            attributeCell.showConvertSwitch(false)
+        if let entities = entities {
+            
         }
         
         
         
-        attributeCell.attributeValue.text = Stub.characterDict[currentKey]?.firstUppercased
-        attributeCell.attributeName.text = Attribute(name: currentKey)?.displayName
+        
         
         return attributeCell
-        
-    }
+        }
+    
     
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return Stub.character?.name
-        
+        return "Title"
     }
     
     
@@ -53,7 +45,7 @@ class EntityDetailController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
@@ -98,11 +90,14 @@ extension EntityDetailController: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return Stub.pickerData.count
+        return Stub.characters.count
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let titleData = Stub.pickerData[row]
+        
+        guard let character: Character = Stub.characters[row] else { return nil }
+        
+        let titleData = character.name
         
         let myColor = UIColor(red: (250/255.0), green: (222/255.0), blue: (74/255.0), alpha: (1/1.0))
         let shadow = NSShadow()

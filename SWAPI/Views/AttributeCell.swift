@@ -11,6 +11,11 @@ import UIKit
 class AttributeCell: UITableViewCell {
 
     @IBOutlet weak var convertValueSwitch: UIStackView!
+    @IBOutlet weak var leftUnit: UILabel!
+    @IBOutlet weak var rightUnit: UILabel!
+    
+    
+    
     @IBOutlet weak var attributeName: UILabel!
     @IBOutlet weak var attributeValue: UILabel!
     
@@ -18,7 +23,7 @@ class AttributeCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        convertValueSwitch.isHidden = true
+        convertValueSwitch.isHidden = false
         
         
     }
@@ -30,8 +35,19 @@ class AttributeCell: UITableViewCell {
     }
     
     
-    func showConvertSwitch(_ hidden: Bool) {
-            convertValueSwitch.isHidden = hidden
-    }
+//    func determineConvertSwitchVisibilityFor(_ attribute: String) {
+//        switch attribute {
+//        case Attribute.height.key:
+//            convertValueSwitch.isHidden = false
+//        case Attribute.cost.key:
+//            convertValueSwitch.isHidden = false
+//            leftUnit.text = "USD"
+//            rightUnit.text = "Credit"
+//        default:
+//            convertValueSwitch.isHidden = true
+//        }
+//    }
+    
+
 
 }

@@ -31,6 +31,17 @@ class EntitySelectionController: UITableViewController {
         if segue.identifier == "showCharacters" {
             if let destination = segue.destination as? EntityDetailController {
                 destination.navigationItem.title = "Characters"
+                destination.entities = Stub.characters
+            }
+        }
+        if segue.identifier == "showStarships" {
+            if let destination = segue.destination as? EntityDetailController {
+                destination.navigationItem.title = "Starships"
+            }
+        }
+        if segue.identifier == "showVehicles" {
+            if let destination = segue.destination as? EntityDetailController {
+                destination.navigationItem.title = "Vehicles"
             }
         }
     }

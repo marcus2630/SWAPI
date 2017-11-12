@@ -10,7 +10,7 @@ import Foundation
 
 
 
-class Character {
+class Character: Entity {
     let name: String
     let height: Int
     let mass: Int
@@ -34,7 +34,7 @@ class Character {
 }
 
 extension Character {
-    convenience init?(withJson json: [String: String]) {
+    convenience init?(withJson json: [String: Any]) {
         struct Key {
             static let name = "name"
             static let height = "height"
@@ -46,14 +46,14 @@ extension Character {
             static let gender = "gender"
         }
         
-        guard   let name        = json[Key.name],
-                let height      = json[Key.height],
-                let mass        = json[Key.mass],
-                let hairColor   = json[Key.hairColor],
-                let skinColor   = json[Key.skinColor],
-                let eyeColor    = json[Key.eyeColor],
-                let birthYear   = json[Key.birthYear],
-                let gender      = json[Key.gender]
+        guard   let name        = json[Key.name] as? String,
+                let height      = json[Key.height] as? String,
+                let mass        = json[Key.mass] as? String,
+                let hairColor   = json[Key.hairColor] as? String,
+                let skinColor   = json[Key.skinColor] as? String,
+                let eyeColor    = json[Key.eyeColor] as? String,
+                let birthYear   = json[Key.birthYear] as? String,
+                let gender      = json[Key.gender] as? String
         else {
             return nil
         }

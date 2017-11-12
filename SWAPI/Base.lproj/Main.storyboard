@@ -274,6 +274,8 @@
                                             <outlet property="attributeName" destination="EgE-Jj-zrA" id="vLt-Hl-hhC"/>
                                             <outlet property="attributeValue" destination="sjc-13-zze" id="nwU-Qc-MeA"/>
                                             <outlet property="convertValueSwitch" destination="hBE-BT-LJw" id="e5t-OR-DgT"/>
+                                            <outlet property="leftUnit" destination="c28-GO-gtX" id="5Tc-yF-BxG"/>
+                                            <outlet property="rightUnit" destination="nd7-Sh-9js" id="H9h-s2-YAf"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
