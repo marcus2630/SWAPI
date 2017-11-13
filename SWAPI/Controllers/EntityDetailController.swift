@@ -23,10 +23,24 @@ class EntityDetailController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let attributeCell = tableView.dequeueReusableCell(withIdentifier: "AttributeCell", for: indexPath) as? AttributeCell else { fatalError() }
         
-        
-        
-        
-        
+        // Check if entities is set
+		if let entities = entities {
+			
+			// - Grab entity of choise
+			let entity = entities[0]
+			
+			// Get all keys of the attributes property
+			let keys = Array(entity.attributes.keys)
+			
+			// Get current key for indexPath
+			let currentKey = keys[indexPath.row]
+			
+			attributeCell.attributeName.text = Attributes(name: currentKey)?.displayName
+			
+			if let value = entity.attributes[keys[indexPath.row]] as? String {
+			attributeCell.attributeValue.text = String(value)?.firstUppercased
+			}
+		}
         
         
         

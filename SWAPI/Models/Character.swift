@@ -36,8 +36,13 @@ class Character: Entity {
 			static let gender = "gender"
 		}
 		
+		// Retrieve name key for stored property
+		guard let name = json["name"] as? String else { return nil }
+		
 		// Remove name value
 		json.removeValue(forKey: "name")
+		
+		
 		
 		self.init(name: name, attributes: json)
 	}

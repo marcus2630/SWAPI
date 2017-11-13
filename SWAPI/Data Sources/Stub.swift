@@ -13,14 +13,12 @@ class Stub {
     
     
     static let characters: [Character] = [Stub.character!, Stub.characterSecond!]
-    
-    
-    static let pickerData = ["Mozzarella","Gorgonzola","Provolone","Brie","Maytag Blue","Sharp Cheddar","Monterrey Jack","Stilton","Gouda","Goat Cheese", "Asiago"]
+	
     
     static let character = Character(withJson: characterDict)
     static let characterSecond = Character(withJson: characterDictSecond)
     
-    static let starship = Starship(withJson: starshipDict)
+    // static let starship = Starship(withJson: starshipDict)
     
     static let characterDict: [String: Any] = ["name": "Luke Skywalker",
                                 "height": "172",
@@ -30,6 +28,7 @@ class Stub {
                                 "eye_color": "blue",
                                 "birth_year": "19BBY",
                                 "gender": "male"]
+	
     static let characterDictSecond: [String: Any] = ["name": "C-3PO",
                                                      "height": "167",
                                                      "mass": "75",

@@ -12,5 +12,5 @@ protocol Entity {
     var name: String { get }
     var attributes: [String : Any] { get set }
 	init(name: String, attributes: [String : Any])
-	convenience init?(withJson json: [String : Any]) {
+	init?(withJson json: [String : Any])
 }
