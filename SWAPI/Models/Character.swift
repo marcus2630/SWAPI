@@ -9,60 +9,37 @@
 import Foundation
 
 
-
 class Character: Entity {
-    let name: String
-    let height: Int
-    let mass: Int
-    let hairColor: String
-    let skinColor: String
-    let eyeColor: String
-    let birthYear: String
-    let gender: String
     
+    var name: String
+    var attributes: [String : Any]
     
-    init(name: String, height: Int, mass: Int, hairColor: String, skinColor: String, eyeColor: String, birthYear: String, gender: String) {
+    required init(name: String, attributes: [String : Any]) {
         self.name = name
-        self.height = height
-        self.mass = mass
-        self.hairColor = hairColor
-        self.skinColor = skinColor
-        self.eyeColor = eyeColor
-        self.birthYear = birthYear
-        self.gender = gender
+        self.attributes = attributes
     }
-}
-
-extension Character {
-    convenience init?(withJson json: [String: Any]) {
-        struct Key {
-            static let name = "name"
-            static let height = "height"
-            static let mass = "mass"
-            static let hairColor = "hair_color"
-            static let skinColor = "skin_color"
-            static let eyeColor = "eye_color"
-            static let birthYear = "birth_year"
-            static let gender = "gender"
-        }
-        
-        guard   let name        = json[Key.name] as? String,
-                let height      = json[Key.height] as? String,
-                let mass        = json[Key.mass] as? String,
-                let hairColor   = json[Key.hairColor] as? String,
-                let skinColor   = json[Key.skinColor] as? String,
-                let eyeColor    = json[Key.eyeColor] as? String,
-                let birthYear   = json[Key.birthYear] as? String,
-                let gender      = json[Key.gender] as? String
-        else {
-            return nil
-        }
-        
-        
-        
-            
-        guard let heightAsInt = Int(height), let massAsInt = Int(mass) else { return nil }
-        
-        self.init(name: name, height: heightAsInt, mass: massAsInt, hairColor: hairColor, skinColor: skinColor, eyeColor: eyeColor, birthYear: birthYear, gender: gender)
-    }
+	
+	required convenience init?(withJson json: [String : Any]) {
+		
+		// Set json to mutable json
+		var json = json
+		
+		// NOTE: - Not in use right now, might come in handy, else remove in final
+		struct Key {
+			static let name = "name"
+			static let height = "height"
+			static let mass = "mass"
+			static let hairColor = "hair_color"
+			static let skinColor = "skin_color"
+			static let eyeColor = "eye_color"
+			static let birthYear = "birth_year"
+			static let gender = "gender"
+		}
+		
+		// Remove name value
+		json.removeValue(forKey: "name")
+		
+		self.init(name: name, attributes: json)
+	}
+    
 }

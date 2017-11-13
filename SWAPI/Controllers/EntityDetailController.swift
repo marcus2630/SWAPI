@@ -18,13 +18,14 @@ class EntityDetailController: UIViewController, UITableViewDataSource, UITableVi
     
     var entities: [Entity]? = nil
     
+   
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let attributeCell = tableView.dequeueReusableCell(withIdentifier: "AttributeCell", for: indexPath) as? AttributeCell else { fatalError() }
         
-        if let entities = entities {
-            
-        }
+        
+        
+        
         
         
         
@@ -95,9 +96,10 @@ extension EntityDetailController: UIPickerViewDataSource, UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         
-        guard let character: Character = Stub.characters[row] else { return nil }
+        guard let entities = entities else { return nil }
+        guard let entity: Entity = entities[row] else { return nil }
         
-        let titleData = character.name
+        let titleData = entity.name
         
         let myColor = UIColor(red: (250/255.0), green: (222/255.0), blue: (74/255.0), alpha: (1/1.0))
         let shadow = NSShadow()
