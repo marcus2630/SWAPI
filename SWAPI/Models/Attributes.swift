@@ -9,20 +9,20 @@
 import Foundation
 
 enum Attributes {
-    case name(String)
-    case height(Int)
-    case mass(Int)
-    case hairColor(String)
-    case skinColor(String)
-    case eyeColor(String)
-    case birthYear(String)
-    case gender(String)
-    case make(String)
-    case cost(Int)
-    case length(Int)
-    case classType(String)
-    case crew(String)
-    
+    case name
+    case height
+    case mass
+    case hairColor
+    case skinColor
+    case eyeColor
+    case birthYear
+    case gender
+    case make
+    case cost
+    case length
+    case classType
+    case crew
+	
     var displayName: String {
         switch self {
         case .name: return "Name"
@@ -60,21 +60,21 @@ enum Attributes {
 }
 
 extension Attributes {
-    init?(name: String, value: Any) {
+    init?(name: String) {
         switch name {
-        case "name": self = .name(value as! String)
-        case "height": self = .height(value as! Int)
-        case "mass": self = .mass(value as! Int)
-        case "hair_color": self = .hairColor(value as! String)
-        case "skin_color": self = .skinColor(value as! String)
-        case "eye_color": self = .eyeColor(value as! String)
-        case "birth_year": self = .birthYear(value as! String)
-        case "gender": self = .gender(value as! String)
-        case "manufacturer": self = .make(value as! String)
-        case "cost_in_credits": self = .cost(value as! Int)
-        case "length": self = .length(value as! Int)
-        case "starship_class": self = .classType(value as! String)
-        case "crew": self = .crew(value as! String)
+        case "name": self = .name
+        case "height": self = .height
+        case "mass": self = .mass
+        case "hair_color": self = .hairColor
+        case "skin_color": self = .skinColor
+        case "eye_color": self = .eyeColor
+        case "birth_year": self = .birthYear
+        case "gender": self = .gender
+        case "manufacturer": self = .make
+        case "cost_in_credits": self = .cost
+        case "length": self = .length
+        case "starship_class": self = .classType
+        case "crew": self = .crew
         default: return nil
         }
     }
