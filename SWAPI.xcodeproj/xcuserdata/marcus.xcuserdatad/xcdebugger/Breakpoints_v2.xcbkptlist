@@ -10,13 +10,122 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SWAPI/Controllers/EntitySelectionController.swift"
-            timestampString = "532298341.235677"
+            timestampString = "532382639.311072"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "tableView(_:heightForRowAt:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SWAPI/Controllers/EntityDetailController.swift"
+            timestampString = "532382639.311126"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1"
+            endingLineNumber = "1"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SWAPI.EntityDetailController.__deallocating_deinit"
+                  moduleName = "SWAPI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcus/Desktop/Apps/SWAPI/SWAPI/Controllers/EntityDetailController.swift"
+                  timestampString = "532382639.384208"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SWAPI.EntityDetailController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; SWAPI.EntityDetailController"
+                  moduleName = "SWAPI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcus/Desktop/Apps/SWAPI/SWAPI/Controllers/EntityDetailController.swift"
+                  timestampString = "532382639.385715"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SWAPI.EntityDetailController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; SWAPI.EntityDetailController"
+                  moduleName = "SWAPI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcus/Desktop/Apps/SWAPI/SWAPI/Controllers/EntityDetailController.swift"
+                  timestampString = "532382639.387192"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "77">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SWAPI.EntityDetailController.__allocating_init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;SWAPI.EntityDetailController&gt;"
+                  moduleName = "SWAPI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcus/Desktop/Apps/SWAPI/SWAPI/Controllers/EntityDetailController.swift"
+                  timestampString = "532382639.388781"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SWAPI.EntityDetailController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;SWAPI.EntityDetailController&gt;"
+                  moduleName = "SWAPI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcus/Desktop/Apps/SWAPI/SWAPI/Controllers/EntityDetailController.swift"
+                  timestampString = "532382639.390533"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "46">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SWAPI/Controllers/EntityDetailController.swift"
+            timestampString = "532382639.311165"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "EntityDetailController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

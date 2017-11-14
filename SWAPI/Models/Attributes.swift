@@ -22,6 +22,8 @@ enum Attributes {
     case length
     case classType
     case crew
+	case speed
+	case passengers
 	
     var displayName: String {
         switch self {
@@ -38,6 +40,8 @@ enum Attributes {
         case .length: return "Length"
         case .classType: return "Class"
         case .crew: return "Crew"
+		case .speed: return "Speed"
+		case .passengers: return "Passengers"
         }
     }
     var key: String {
@@ -55,6 +59,8 @@ enum Attributes {
         case .length: return "length"
         case .classType: return "starship_class"
         case .crew: return "crew"
+		case .speed: return "max_atmosphering_speed"
+		case .passengers: return "passengers"
         }
     }
 }
@@ -75,7 +81,13 @@ extension Attributes {
         case "length": self = .length
         case "starship_class": self = .classType
         case "crew": self = .crew
+		case "max_atmosphering_speed": self = .speed
+		case "passengers": self = .passengers
         default: return nil
         }
     }
+	
+
 }
+
+

@@ -9,6 +9,8 @@
 import UIKit
 
 class EntityDetailController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+	
     
 
     
@@ -26,8 +28,11 @@ class EntityDetailController: UIViewController, UITableViewDataSource, UITableVi
         // Check if entities is set
 		if let entities = entities {
 			
-			// - Grab entity of choise
-			let entity = entities[0]
+			// - Grab entity of choice
+			var entity = entities[0]
+			
+			// Remove nested dictionaries from attributes
+			entity.attributes = removeUnwantedData(from: entity.attributes)
 			
 			// Get all keys of the attributes property
 			let keys = Array(entity.attributes.keys)
@@ -35,18 +40,21 @@ class EntityDetailController: UIViewController, UITableViewDataSource, UITableVi
 			// Get current key for indexPath
 			let currentKey = keys[indexPath.row]
 			
-			attributeCell.attributeName.text = Attributes(name: currentKey)?.displayName
 			
+			
+			// FIXME: - Needs work once I accept attributes as Ints instead for strings for conversion
 			if let value = entity.attributes[keys[indexPath.row]] as? String {
 			attributeCell.attributeValue.text = String(value)?.firstUppercased
-			}
+			attributeCell.attributeName.text = Attributes(name: currentKey)?.displayName
 		}
         
-        
+		}
         
         
         return attributeCell
         }
+		
+		
     
     
     
@@ -60,7 +68,7 @@ class EntityDetailController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 10
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){

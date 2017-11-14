@@ -26,7 +26,8 @@ class EntitySelectionController: UITableViewController {
 
         
     }
-    
+	
+	
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showCharacters" {
             if let destination = segue.destination as? EntityDetailController {
@@ -37,6 +38,7 @@ class EntitySelectionController: UITableViewController {
         if segue.identifier == "showStarships" {
             if let destination = segue.destination as? EntityDetailController {
                 destination.navigationItem.title = "Starships"
+				destination.entities = Stub.starships
             }
         }
         if segue.identifier == "showVehicles" {
