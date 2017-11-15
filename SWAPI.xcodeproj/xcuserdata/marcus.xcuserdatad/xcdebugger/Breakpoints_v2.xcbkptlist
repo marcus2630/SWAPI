@@ -22,11 +22,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SWAPI/Controllers/EntityDetailController.swift"
-            timestampString = "532382639.311126"
+            timestampString = "532467482.095552"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1"
@@ -35,14 +35,14 @@
             landmarkType = "0">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "SWAPI.EntityDetailController.__deallocating_deinit"
                   moduleName = "SWAPI"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/marcus/Desktop/Apps/SWAPI/SWAPI/Controllers/EntityDetailController.swift"
-                  timestampString = "532382639.384208"
+                  timestampString = "532466323.139023"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -50,14 +50,14 @@
                   offsetFromSymbolStart = "4">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "SWAPI.EntityDetailController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; SWAPI.EntityDetailController"
                   moduleName = "SWAPI"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/marcus/Desktop/Apps/SWAPI/SWAPI/Controllers/EntityDetailController.swift"
-                  timestampString = "532382639.385715"
+                  timestampString = "532466323.142563"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -65,14 +65,14 @@
                   offsetFromSymbolStart = "12">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "SWAPI.EntityDetailController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; SWAPI.EntityDetailController"
                   moduleName = "SWAPI"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/marcus/Desktop/Apps/SWAPI/SWAPI/Controllers/EntityDetailController.swift"
-                  timestampString = "532382639.387192"
+                  timestampString = "532466323.145214"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "19"
@@ -80,14 +80,14 @@
                   offsetFromSymbolStart = "77">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "SWAPI.EntityDetailController.__allocating_init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;SWAPI.EntityDetailController&gt;"
                   moduleName = "SWAPI"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/marcus/Desktop/Apps/SWAPI/SWAPI/Controllers/EntityDetailController.swift"
-                  timestampString = "532382639.388781"
+                  timestampString = "532466323.14739"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -95,14 +95,14 @@
                   offsetFromSymbolStart = "4">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "SWAPI.EntityDetailController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;SWAPI.EntityDetailController&gt;"
                   moduleName = "SWAPI"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/marcus/Desktop/Apps/SWAPI/SWAPI/Controllers/EntityDetailController.swift"
-                  timestampString = "532382639.390533"
+                  timestampString = "532466323.149535"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "19"
@@ -110,22 +110,6 @@
                   offsetFromSymbolStart = "46">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SWAPI/Controllers/EntityDetailController.swift"
-            timestampString = "532382639.311165"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "EntityDetailController"
-            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

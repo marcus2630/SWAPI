@@ -18,15 +18,13 @@ class EntityDetailController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet weak var characterPicker: UIPickerView!
     
-    var entities: [Entity]? = nil
+    var entities = [Entity]()
     
    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let attributeCell = tableView.dequeueReusableCell(withIdentifier: "AttributeCell", for: indexPath) as? AttributeCell else { fatalError() }
-        
-        // Check if entities is set
-		if let entities = entities {
+		
 			
 			// - Grab entity of choice
 			var entity = entities[0]
@@ -44,11 +42,10 @@ class EntityDetailController: UIViewController, UITableViewDataSource, UITableVi
 			
 			// FIXME: - Needs work once I accept attributes as Ints instead for strings for conversion
 			if let value = entity.attributes[keys[indexPath.row]] as? String {
-			attributeCell.attributeValue.text = String(value)?.firstUppercased
-			attributeCell.attributeName.text = Attributes(name: currentKey)?.displayName
-		}
-        
-		}
+				attributeCell.attributeValue.text = String(value)?.firstUppercased
+				attributeCell.attributeName.text = Attributes(name: currentKey)?.displayName
+			}
+		
         
         
         return attributeCell
@@ -68,7 +65,8 @@ class EntityDetailController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+	
+			return entities[0].attributes.count
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
@@ -117,8 +115,7 @@ extension EntityDetailController: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        
-        guard let entities = entities else { return nil }
+		
         guard let entity: Entity = entities[row] else { return nil }
         
         let titleData = entity.name

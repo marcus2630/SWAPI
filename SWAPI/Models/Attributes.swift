@@ -24,6 +24,11 @@ enum Attributes {
     case crew
 	case speed
 	case passengers
+	case capacity
+	case consumables
+	case mglt
+	case hyper
+	case model
 	
     var displayName: String {
         switch self {
@@ -42,6 +47,11 @@ enum Attributes {
         case .crew: return "Crew"
 		case .speed: return "Speed"
 		case .passengers: return "Passengers"
+		case .capacity: return "Capacity"
+		case .consumables: return "Consumables"
+		case .mglt: return "MGLT"
+		case .hyper: return "Hyper"
+		case .model: return "Model"
         }
     }
     var key: String {
@@ -61,6 +71,11 @@ enum Attributes {
         case .crew: return "crew"
 		case .speed: return "max_atmosphering_speed"
 		case .passengers: return "passengers"
+		case .capacity: return "cargo_capacity"
+		case .consumables: return "consumables"
+		case .mglt: return "MGLT"
+		case .hyper: return "hyperdrive_rating"
+		case .model: return "model"
         }
     }
 }
@@ -83,6 +98,11 @@ extension Attributes {
         case "crew": self = .crew
 		case "max_atmosphering_speed": self = .speed
 		case "passengers": self = .passengers
+		case "cargo_capacity": self = .capacity
+		case "consumables": self = .consumables
+		case "MGLT": self = .mglt
+		case "hyperdrive_rating": self = .hyper
+		case "model": self = .model
         default: return nil
         }
     }
