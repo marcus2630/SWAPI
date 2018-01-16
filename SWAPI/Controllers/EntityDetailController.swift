@@ -9,31 +9,29 @@
 import UIKit
 
 class EntityDetailController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
-	
-    
-
-    
     
     
     @IBOutlet weak var characterPicker: UIPickerView!
     
+    
     var entities = [Entity]()
     
-   
+    // - Grab entity of choice
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let attributeCell = tableView.dequeueReusableCell(withIdentifier: "AttributeCell", for: indexPath) as? AttributeCell else { fatalError() }
 		
-			
+        attributeCell.attributeValue.text = nil
+        attributeCell.attributeName.text = nil
+        
+        
 			// - Grab entity of choice
 			var entity = entities[0]
 			
 			// Remove nested dictionaries from attributes
-			entity.attributes = removeUnwantedData(from: entity.attributes)
-			
+			entities[0].attributes = removeUnwantedData(from: entities[0].attributes)
 			// Get all keys of the attributes property
-			let keys = Array(entity.attributes.keys)
+			let keys = Array(entities[0].attributes.keys)
 			
 			// Get current key for indexPath
 			let currentKey = keys[indexPath.row]
@@ -56,7 +54,7 @@ class EntityDetailController: UIViewController, UITableViewDataSource, UITableVi
     
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Title"
+        return entities[0].name
     }
     
     
@@ -66,6 +64,8 @@ class EntityDetailController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 	
+            // Remove nested dictionaries from attributes
+            entities[0].attributes = removeUnwantedData(from: entities[0].attributes)
 			return entities[0].attributes.count
     }
     
