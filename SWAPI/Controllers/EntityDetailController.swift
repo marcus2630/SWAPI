@@ -12,9 +12,11 @@ class EntityDetailController: UIViewController, UITableViewDataSource, UITableVi
     
     
     @IBOutlet weak var characterPicker: UIPickerView!
+    @IBOutlet weak var characterSpecsTableView: UITableView!
     
     
     var entities = [Entity]()
+    var headline = String()
     
     // - Grab entity of choice
     
@@ -51,10 +53,10 @@ class EntityDetailController: UIViewController, UITableViewDataSource, UITableVi
 		
 		
     
-    
+
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return entities[0].name
+        return headline
     }
     
     
@@ -88,6 +90,13 @@ class EntityDetailController: UIViewController, UITableViewDataSource, UITableVi
         // Set pickerview data source and delegates to self
         characterPicker.dataSource = self
         characterPicker.delegate = self
+        
+        
+        // Reload title for display
+        headline = entities[0].name as String
+        characterSpecsTableView.reloadData()
+        // obsolute but still cool
+        // characterPicker.selectRow(0, inComponent: 0, animated: true)
     
         
 
@@ -108,6 +117,14 @@ class EntityDetailController: UIViewController, UITableViewDataSource, UITableVi
 extension EntityDetailController: UIPickerViewDataSource, UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
+    }
+    
+    
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent  component: Int) {
+        let characterSelected = entities[row].name as String
+        headline = characterSelected
+        characterSpecsTableView.reloadData()
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
