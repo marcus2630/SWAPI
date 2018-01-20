@@ -27,6 +27,7 @@ class EntityDetailController: UIViewController, UITableViewDataSource, UITableVi
         attributeCell.attributeValue.text = nil
         attributeCell.attributeName.text = nil
         
+        
 			
 			// Get all keys of the attributes property
 			let keys = Array(entities[0].attributes.keys)
@@ -39,8 +40,13 @@ class EntityDetailController: UIViewController, UITableViewDataSource, UITableVi
 			// FIXME: - Needs work once I accept attributes as Ints instead for strings for conversion
         
         if let entity = entity {
+            print(entity.attributes[keys[indexPath.row]])
             if let value = entity.attributes[keys[indexPath.row]] as? String {
                 attributeCell.attributeValue.text = String(value)?.firstUppercased
+                attributeCell.attributeName.text = Attributes(name: currentKey)?.displayName
+            } else
+            if let value = entity.attributes[keys[indexPath.row]] as? Int {
+                attributeCell.attributeValue.text = String(value)
                 attributeCell.attributeName.text = Attributes(name: currentKey)?.displayName
             }
         }

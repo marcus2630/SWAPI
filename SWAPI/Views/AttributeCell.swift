@@ -23,7 +23,7 @@ class AttributeCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        convertValueSwitch.isHidden = false
+        
         
         
     }
@@ -35,18 +35,7 @@ class AttributeCell: UITableViewCell {
     }
     
     
-//    func determineConvertSwitchVisibilityFor(_ attribute: String) {
-//        switch attribute {
-//        case Attribute.height.key:
-//            convertValueSwitch.isHidden = false
-//        case Attribute.cost.key:
-//            convertValueSwitch.isHidden = false
-//            leftUnit.text = "USD"
-//            rightUnit.text = "Credit"
-//        default:
-//            convertValueSwitch.isHidden = true
-//        }
-//    }
+
     
 
 

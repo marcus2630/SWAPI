@@ -45,13 +45,12 @@ class Character: Entity {
         
         for (key, value) in json {
             if let value = value as? String {
-                if let value = Int(value) {
-                    data.updateValue(value, forKey: key)
-                } else {
+                data.updateValue(value, forKey: key)
+            }
+            if let value = value as? Int {
+                if let value = Int?(value) {
                     data.updateValue(value, forKey: key)
                 }
-            } else {
-                data.updateValue(value, forKey: key)
             }
         }
         
