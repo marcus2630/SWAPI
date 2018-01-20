@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 class Character: Entity {
     
     var name: String
@@ -41,10 +40,27 @@ class Character: Entity {
 		
 		// Remove name value
 		json.removeValue(forKey: "name")
+        
+        var data = [String: Any]()
+        
+        for (key, value) in json {
+            if let value = value as? String {
+                if let value = Int(value) {
+                    data.updateValue(value, forKey: key)
+                } else {
+                    data.updateValue(value, forKey: key)
+                }
+            } else {
+                data.updateValue(value, forKey: key)
+            }
+        }
+        
+        print(data)
+        
 		
+       
 		
-		
-		self.init(name: name, attributes: json)
+		self.init(name: name, attributes: data)
 	}
     
 }

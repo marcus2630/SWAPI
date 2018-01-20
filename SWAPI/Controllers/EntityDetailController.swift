@@ -17,6 +17,7 @@ class EntityDetailController: UIViewController, UITableViewDataSource, UITableVi
     
     var entities = [Entity]()
     var headline = String()
+    var entity: Entity?
     
     // - Grab entity of choice
     
@@ -26,12 +27,7 @@ class EntityDetailController: UIViewController, UITableViewDataSource, UITableVi
         attributeCell.attributeValue.text = nil
         attributeCell.attributeName.text = nil
         
-        
-			// - Grab entity of choice
-			var entity = entities[0]
 			
-			// Remove nested dictionaries from attributes
-			entities[0].attributes = removeUnwantedData(from: entities[0].attributes)
 			// Get all keys of the attributes property
 			let keys = Array(entities[0].attributes.keys)
 			
@@ -41,10 +37,14 @@ class EntityDetailController: UIViewController, UITableViewDataSource, UITableVi
 			
 			
 			// FIXME: - Needs work once I accept attributes as Ints instead for strings for conversion
-			if let value = entity.attributes[keys[indexPath.row]] as? String {
-				attributeCell.attributeValue.text = String(value)?.firstUppercased
-				attributeCell.attributeName.text = Attributes(name: currentKey)?.displayName
-			}
+        
+        if let entity = entity {
+            if let value = entity.attributes[keys[indexPath.row]] as? String {
+                attributeCell.attributeValue.text = String(value)?.firstUppercased
+                attributeCell.attributeName.text = Attributes(name: currentKey)?.displayName
+            }
+        }
+
 		
         
         
@@ -94,9 +94,17 @@ class EntityDetailController: UIViewController, UITableViewDataSource, UITableVi
         
         // Reload title for display
         headline = entities[0].name as String
+        entity = entities[0] as Entity
+        characterPicker.selectRow(0, inComponent: 0, animated: true)
+        
+        if var entity = entity {
+            entity.attributes = removeUnwantedData(from: entity.attributes)
+        }
+        
         characterSpecsTableView.reloadData()
+        
         // obsolute but still cool
-        // characterPicker.selectRow(0, inComponent: 0, animated: true)
+        
     
         
 
@@ -124,6 +132,10 @@ extension EntityDetailController: UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent  component: Int) {
         let characterSelected = entities[row].name as String
         headline = characterSelected
+        entity = entities[row] as Entity
+        if var entity = entity {
+            entity.attributes = removeUnwantedData(from: entity.attributes)
+        }
         characterSpecsTableView.reloadData()
     }
     
