@@ -262,8 +262,20 @@
                                                         <constraint firstAttribute="width" constant="90" id="zQl-An-17D"/>
                                                     </constraints>
                                                 </stackView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aak-98-xnk">
+                                                    <rect key="frame" x="209" y="0.0" width="166" height="43"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="166" id="9Iq-Cr-x0A"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <action selector="didChangeMeasure:" destination="4fh-bJ-iI0" eventType="touchUpInside" id="cgd-cR-Yi9"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Aak-98-xnk" secondAttribute="trailing" id="3aE-Hk-GRb"/>
+                                                <constraint firstAttribute="bottom" secondItem="Aak-98-xnk" secondAttribute="bottom" id="6vp-AZ-bwE"/>
+                                                <constraint firstItem="Aak-98-xnk" firstAttribute="top" secondItem="xuE-eT-Uxz" secondAttribute="top" id="A0g-zb-0S1"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="hBE-BT-LJw" secondAttribute="trailing" constant="15.5" id="Nr9-6U-l8t"/>
                                                 <constraint firstItem="hBE-BT-LJw" firstAttribute="top" secondItem="xuE-eT-Uxz" secondAttribute="topMargin" id="Pao-6c-EbB"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="hBE-BT-LJw" secondAttribute="bottom" id="a48-Ov-sMW"/>

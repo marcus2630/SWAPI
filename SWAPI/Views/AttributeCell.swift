@@ -13,7 +13,7 @@ class AttributeCell: UITableViewCell {
     @IBOutlet weak var convertValueSwitch: UIStackView!
     @IBOutlet weak var leftUnit: UILabel!
     @IBOutlet weak var rightUnit: UILabel!
-    
+
     
     
     @IBOutlet weak var attributeName: UILabel!

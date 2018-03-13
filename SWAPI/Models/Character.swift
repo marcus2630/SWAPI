@@ -8,6 +8,10 @@
 
 import Foundation
 
+func isStringAnInt(string: String) -> Bool {
+    return Int(string) != nil
+}
+
 class Character: Entity {
     
     var name: String
@@ -22,18 +26,7 @@ class Character: Entity {
 		
 		// Set json to mutable json
 		var json = json
-		
-		// NOTE: - Not in use right now, might come in handy, else remove in final
-		struct Key {
-			static let name = "name"
-			static let height = "height"
-			static let mass = "mass"
-			static let hairColor = "hair_color"
-			static let skinColor = "skin_color"
-			static let eyeColor = "eye_color"
-			static let birthYear = "birth_year"
-			static let gender = "gender"
-		}
+    
 		
 		// Retrieve name key for stored property
 		guard let name = json["name"] as? String else { return nil }
@@ -44,17 +37,17 @@ class Character: Entity {
         var data = [String: Any]()
         
         for (key, value) in json {
+            
+            // Check if string is int, if so, convert to int and append to data
             if let value = value as? String {
-                data.updateValue(value, forKey: key)
-            }
-            if let value = value as? Int {
-                if let value = Int?(value) {
-                    data.updateValue(value, forKey: key)
+                if let num = Int(value) {
+                    data[key] = num
+                } else {
+                    data[key] = value
                 }
             }
         }
         
-        print(data)
         
 		
        

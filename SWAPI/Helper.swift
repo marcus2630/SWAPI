@@ -18,8 +18,22 @@ func removeUnwantedData(from dictionary: [String : Any]) -> [String : Any] {
 			flatDictionary.updateValue(value, forKey: key)
 			}
 		}
-	}
+        if let value = value as? Int {
+            flatDictionary.updateValue(value, forKey: key)
+        }
+        if let value = value as? Double {
+            flatDictionary.updateValue(value, forKey: key)
+            print("double")
+        }
+        if let value = value as? Float {
+            flatDictionary.updateValue(value, forKey: key)
+        }
+    }
 	return flatDictionary
 }
 
-
+extension String {
+    var isInt: Bool {
+        return Int(self) != nil
+    }
+}

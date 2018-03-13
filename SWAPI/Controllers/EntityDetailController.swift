@@ -14,10 +14,77 @@ class EntityDetailController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var characterPicker: UIPickerView!
     @IBOutlet weak var characterSpecsTableView: UITableView!
     
-    
     var entities = [Entity]()
     var headline = String()
     var entity: Entity?
+    var measure: Measure = .metric
+    
+    @IBAction func didChangeMeasure(_ sender: Any) {
+        print("pressed")
+        // measure switch
+        var lbs: Double = 0.0
+        var feet: Double = 0.0
+        
+        
+        switch measure {
+        case .metric:
+                measure = .english
+                feet = 0.032808399
+                lbs = 0.45359237
+        case .english:
+                measure = .metric
+                feet = 30.48
+                lbs = 2.20462262
+        }
+        
+        if var entity = entity {
+            
+            // Dict for data collection
+            var data: [String: Any] = entity.attributes
+            
+            for (key, value) in entity.attributes {
+                
+                // If value is int
+                if let value = value as? Int {
+                    
+                    // Switch on different keys which holds different measures
+                    switch key {
+                    case Attributes.height.key:
+                        let valueAsDouble = Double(value)
+                        feet *= valueAsDouble
+                        data[key] = Int(feet)
+                    case Attributes.mass.key:
+                        let valueAsDouble = Double(value)
+                        lbs *= valueAsDouble
+                        data[key] = Int(lbs)
+                    default: break
+                    }
+                    
+                }
+                
+                if let value = value as? Double {
+                    switch key {
+                    case Attributes.height.key:
+                        let double = Double(value)
+                        feet = double*feet
+                        data[key] = Int(feet)
+                    case Attributes.mass.key:
+                        let double = Double(value)
+                        lbs = double*lbs
+                        data[key] = Int(lbs)
+                    default: break
+                    }
+                }
+            }
+            
+            // Put data back into attributes
+            entity.attributes = data
+        }
+        
+        characterSpecsTableView.reloadData()
+    }
+    
+    
     
     // - Grab entity of choice
     
@@ -40,15 +107,34 @@ class EntityDetailController: UIViewController, UITableViewDataSource, UITableVi
 			// FIXME: - Needs work once I accept attributes as Ints instead for strings for conversion
         
         if let entity = entity {
-            print(entity.attributes[keys[indexPath.row]])
+            print(entity.attributes)
             if let value = entity.attributes[keys[indexPath.row]] as? String {
                 attributeCell.attributeValue.text = String(value)?.firstUppercased
                 attributeCell.attributeName.text = Attributes(name: currentKey)?.displayName
-            } else
-            if let value = entity.attributes[keys[indexPath.row]] as? Int {
+            } else if let value = entity.attributes[keys[indexPath.row]] as? Int {
+                attributeCell.attributeValue.text = String(value)
+                attributeCell.attributeName.text = Attributes(name: currentKey)?.displayName
+            } else if let value = entity.attributes[keys[indexPath.row]] as? Float {
+                attributeCell.attributeValue.text = String(value)
+                attributeCell.attributeName.text = Attributes(name: currentKey)?.displayName
+            } else if let value = entity.attributes[keys[indexPath.row]] as? Double {
                 attributeCell.attributeValue.text = String(value)
                 attributeCell.attributeName.text = Attributes(name: currentKey)?.displayName
             }
+            
+            attributeCell.convertValueSwitch.isHidden = true
+            
+            if (entity.attributes[keys[indexPath.row]] as? Int) != nil {
+                attributeCell.convertValueSwitch.isHidden = false
+            }
+            
+            if (entity.attributes[keys[indexPath.row]] as? Float) != nil {
+                attributeCell.convertValueSwitch.isHidden = false
+            }
+            if (entity.attributes[keys[indexPath.row]] as? Double) != nil {
+                attributeCell.convertValueSwitch.isHidden = false
+            }
+            
         }
 
 		

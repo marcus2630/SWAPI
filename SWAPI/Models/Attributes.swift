@@ -8,6 +8,10 @@
 
 import Foundation
 
+enum Measure {
+    case english, metric
+}
+
 enum Attributes {
     case name
     case height
